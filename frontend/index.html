@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real-Time System Health Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🖥️ Real-Time System Health Monitor</h1>
+    <p class="subtitle">Live infrastructure metrics with ML-based anomaly detection</p>
+  </header>
+
+  <section id="server-tabs" class="server-tabs"></section>
+
+  <section class="cards">
+    <div class="card">
+      <span class="card-label">CPU Usage</span>
+      <span id="cpu-value" class="card-value">--%</span>
+    </div>
+    <div class="card">
+      <span class="card-label">Memory Usage</span>
+      <span id="memory-value" class="card-value">--%</span>
+    </div>
+    <div class="card">
+      <span class="card-label">Temperature</span>
+      <span id="temperature-value" class="card-value">--°C</span>
+    </div>
+    <div class="card">
+      <span class="card-label">Network Latency</span>
+      <span id="latency-value" class="card-value">-- ms</span>
+    </div>
+  </section>
+
+  <section class="chart-container">
+    <canvas id="metricsChart"></canvas>
+  </section>
+
+  <section class="alerts-section">
+    <h2>⚠️ Recent Anomaly Alerts</h2>
+    <table id="alerts-table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Server</th>
+          <th>CPU</th>
+          <th>Memory</th>
+          <th>Temp</th>
+          <th>Latency</th>
+          <th>Anomaly Score</th>
+        </tr>
+      </thead>
+      <tbody id="alerts-body"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
